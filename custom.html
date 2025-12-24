@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreTeach - Custom Builds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="/CoreTech/styles/Font.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CoreTech/styles/style.css">
+    <style>
+        .custom-header {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--yellow) 100%);
+            padding: 60px 40px;
+            text-align: center;
+            border: var(--pixel-border) solid var(--dark-gray);
+            margin-bottom: 40px;
+        }
+        
+        .custom-header h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .configurator {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        
+        @media (max-width: 900px) {
+            .configurator {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .component-options {
+            background-color: var(--white);
+            border: var(--pixel-border) solid var(--dark-gray);
+            padding: 30px;
+        }
+        
+        .component-group {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .component-group h3 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+        
+        .option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background-color: var(--light-gray);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .option:hover {
+            background-color: var(--cream);
+        }
+        
+        .option.selected {
+            background-color: var(--yellow);
+            border-left: 4px solid var(--orange);
+        }
+        
+        .option-price {
+            font-weight: bold;
+            color: var(--orange);
+        }
+        
+        .preview {
+            background-color: var(--white);
+            border: var(--pixel-border) solid var(--dark-gray);
+            padding: 30px;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .preview-image {
+            width: 100%;
+            height: 200px;
+            background-color: var(--cream);
+            border: 2px solid var(--dark-gray);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+        
+        .spec-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .spec-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .total-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--orange);
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .build-name {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid var(--dark-gray);
+        }
+        
+        .save-build {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .save-build input {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid var(--dark-gray);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo"><i class="fas fa-microchip"></i></div>
+            <div class="logo-text">CoreTeach</div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">HOME</a>
+            
+            <div class="dropdown">
+                <a href="products.html" class="nav-link">PRODUCTS <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="computers.html">Computers</a>
+                    <a href="custom.html" style="background-color: var(--orange);">Custom</a>
+                    <a href="laptop.html">Laptop</a>
+                    <a href="parts.html">Parts</a>
+                </div>
+            </div>
+            
+            <a href="support.html" class="nav-link">SUPPORT</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
+        </div>
+        
+        <div class="nav-icons">
+            <div class="profile-dropdown">
+                <button class="icon-btn">
+                    <i class="fas fa-user"></i>
+                </button>
+                <div class="profile-dropdown-content">
+                    <a href="signin.html" style="display: flex; padding: 10px; justify-content: center;">Sign In</a>
+                    <p style="justify-content: center;padding: 10px;display: flex;">Don't have an account?</p>
+                    <a href="signup.html" style="justify-content: center;display: flex;">create one</a>
+                </div>
+            </div>
+            
+            <a href="bag.html" class="icon-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count" class="cart-count" style="display: none;">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="custom-header">
+            <h1>CUSTOM PC BUILDER</h1>
+            <p>Configure your dream PC with our easy-to-use builder</p>
+        </section>
+        
+        <div class="configurator">
+            <div class="component-options">
+                <div class="component-group">
+                    <h3>PROCESSOR (CPU)</h3>
+                    <div class="option selected" data-category="cpu" data-price="299" data-name="AMD Ryzen 5 7600">
+                        <div>
+                            <strong>AMD Ryzen 5 7600</strong><br>
+                            <small>6 cores, 12 threads, 5.1GHz</small>
+                        </div>
+                        <div class="option-price">$299</div>
+                    </div>
+                    <div class="option" data-category="cpu" data-price="449" data-name="Intel i7-14700K">
+                        <div>
+                            <strong>Intel i7-14700K</strong><br>
+                            <small>20 cores, 28 threads, 5.6GHz</small>
+                        </div>
+                        <div class="option-price">$449</div>
+                    </div>
+                    <div class="option" data-category="cpu" data-price="599" data-name="AMD Ryzen 9 7950X">
+                        <div>
+                            <strong>AMD Ryzen 9 7950X</strong><br>
+                            <small>16 cores, 32 threads, 5.7GHz</small>
+                        </div>
+                        <div class="option-price">$599</div>
+                    </div>
+                </div>
+                
+                <div class="component-group">
+                    <h3>GRAPHICS CARD (GPU)</h3>
+                    <div class="option selected" data-category="gpu" data-price="399" data-name="RTX 5060">
+                        <div>
+                            <strong>RTX 5060</strong><br>
+                            <small>8GB GDDR6, PCIe 4.0</small>
+                        </div>
+                        <div class="option-price">$399</div>
+                    </div>
+                    <div class="option" data-category="gpu" data-price="799" data-name="RTX 5070">
+                        <div>
+                            <strong>RTX 5070</strong><br>
+                            <small>12GB GDDR6, PCIe 4.0</small>
+                        </div>
+                        <div class="option-price">$799</div>
+                    </div>
+                    <div class="option" data-category="gpu" data-price="1299" data-name="RTX 5090">
+                        <div>
+                            <strong>RTX 5090</strong><br>
+                            <small>24GB GDDR6X, PCIe 5.0</small>
+                        </div>
+                        <div class="option-price">$1,299</div>
+                    </div>
+                </div>
+                
+                <div class="component-group">
+                    <h3>MEMORY (RAM)</h3>
+                    <div class="option selected" data-category="ram" data-price="89" data-name="16GB DDR5">
+                        <div>
+                            <strong>16GB DDR5</strong><br>
+                            <small>2x8GB, 5600MHz, CL36</small>
+                        </div>
+                        <div class="option-price">$89</div>
+                    </div>
+                    <div class="option" data-category="ram" data-price="129" data-name="32GB DDR5">
+                        <div>
+                            <strong>32GB DDR5</strong><br>
+                            <small>2x16GB, 6000MHz, CL30</small>
+                        </div>
+                        <div class="option-price">$129</div>
+                    </div>
+                    <div class="option" data-category="ram" data-price="259" data-name="64GB DDR5">
+                        <div>
+                            <strong>64GB DDR5</strong><br>
+                            <small>2x32GB, 6400MHz, CL32</small>
+                        </div>
+                        <div class="option-price">$259</div>
+                    </div>
+                </div>
+                
+                <div class="component-group">
+                    <h3>STORAGE</h3>
+                    <div class="option selected" data-category="storage" data-price="69" data-name="512GB SSD">
+                        <div>
+                            <strong>512GB NVMe SSD</strong><br>
+                            <small>PCIe 4.0, 5000MB/s read</small>
+                        </div>
+                        <div class="option-price">$69</div>
+                    </div>
+                    <div class="option" data-category="storage" data-price="129" data-name="1TB SSD">
+                        <div>
+                            <strong>1TB NVMe SSD</strong><br>
+                            <small>PCIe 4.0, 7000MB/s read</small>
+                        </div>
+                        <div class="option-price">$129</div>
+                    </div>
+                    <div class="option" data-category="storage" data-price="299" data-name="2TB SSD">
+                        <div>
+                            <strong>2TB NVMe SSD</strong><br>
+                            <small>PCIe 5.0, 10000MB/s read</small>
+                        </div>
+                        <div class="option-price">$299</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview">
+                <div class="preview-image">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                
+                <h3>YOUR CUSTOM BUILD</h3>
+                <input type="text" class="build-name" placeholder="Name your build (e.g., My Gaming PC)">
+                
+                <ul class="spec-list">
+                    <li>Processor: <span id="preview-cpu">AMD Ryzen 5 7600</span></li>
+                    <li>Graphics: <span id="preview-gpu">RTX 5060</span></li>
+                    <li>Memory: <span id="preview-ram">16GB DDR5</span></li>
+                    <li>Storage: <span id="preview-storage">512GB SSD</span></li>
+                    <li>Motherboard: B650 ATX</li>
+                    <li>Power Supply: 750W 80+ Gold</li>
+                    <li>Case: Mid-Tower with RGB</li>
+                    <li>Cooling: Air Cooler</li>
+                    <li>Operating System: Windows 11 Home</li>
+                </ul>
+                
+                <div class="total-price">
+                    TOTAL: $<span id="total-price">1,166</span>.00
+                </div>
+                
+                <button class="btn" style="width: 100%; padding: 15px;" id="add-custom-to-cart">
+                    ADD CUSTOM BUILD TO BAG
+                </button>
+                
+                <div class="save-build">
+                    <input type="email" placeholder="Email to save build">
+                    <button class="btn">SAVE</button>
+                </div>
+                
+                <p style="text-align: center; margin-top: 20px; font-size: 14px;">
+                    <i class="fas fa-info-circle"></i> Includes assembly and 3-year warranty
+                </p>
+            </div>
+        </div>
+        
+        <div style="background-color: var(--cream); padding: 40px; margin-top: 50px; border: var(--pixel-border) solid var(--dark-gray);">
+            <h2>NEED HELP WITH YOUR BUILD?</h2>
+            <p>Visit our store in Battambang for expert advice, or contact our support team.</p>
+            <div style="display: flex; gap: 20px; margin-top: 20px;">
+                <a href="support.html" class="btn">CONTACT SUPPORT</a>
+                <a href="about.html" class="btn">VISIT OUR STORE</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 CoreTeach | Battambang, Cambodia</p>
+    </footer>
+
+    <script src="/CoreTech/MyScript/script.js"></script>
+    <script>
+        // Custom builder functionality
+        let selectedComponents = {
+            cpu: { name: 'AMD Ryzen 5 7600', price: 299 },
+            gpu: { name: 'RTX 5060', price: 399 },
+            ram: { name: '16GB DDR5', price: 89 },
+            storage: { name: '512GB SSD', price: 69 }
+        };
+        
+        const basePrice = 300; // For case, motherboard, PSU, cooling, OS
+        
+        function updateTotalPrice() {
+            let total = basePrice;
+            total += selectedComponents.cpu.price;
+            total += selectedComponents.gpu.price;
+            total += selectedComponents.ram.price;
+            total += selectedComponents.storage.price;
+            
+            document.getElementById('total-price').textContent = total;
+            
+            // Update preview
+            document.getElementById('preview-cpu').textContent = selectedComponents.cpu.name;
+            document.getElementById('preview-gpu').textContent = selectedComponents.gpu.name;
+            document.getElementById('preview-ram').textContent = selectedComponents.ram.name;
+            document.getElementById('preview-storage').textContent = selectedComponents.storage.name;
+        }
+        
+        // Option selection
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const category = this.dataset.category;
+                const name = this.dataset.name;
+                const price = parseInt(this.dataset.price);
+                
+                // Update selected option styling
+                document.querySelectorAll(`[data-category="${category}"]`).forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                
+                // Update selected components
+                selectedComponents[category] = { name, price };
+                
+                // Update total price
+                updateTotalPrice();
+            });
+        });
+        
+        // Add custom build to cart
+        document.getElementById('add-custom-to-cart').addEventListener('click', function() {
+            const buildName = document.querySelector('.build-name').value || 'Custom PC Build';
+            const total = parseInt(document.getElementById('total-price').textContent);
+            
+            // Create a unique ID for custom builds
+            const customId = Date.now();
+            
+            // Add to cart
+            addToCart(customId, buildName, total, 'custom');
+            alert('Your custom build has been added to your bag!');
+        });
+        
+        // Initialize total price
+        updateTotalPrice();
+    </script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreTeach - Parts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="/CoreTech/styles/Font.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CoreTech/styles/style.css">
+    <style>
+        .parts-header {
+            background-color: var(--cream);
+            padding: 60px 40px;
+            text-align: center;
+            border: var(--pixel-border) solid var(--dark-gray);
+            margin-bottom: 40px;
+        }
+        
+        .parts-header h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .category-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .category-tab {
+            padding: 10px 20px;
+            background-color: var(--white);
+            border: 2px solid var(--dark-gray);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-tab.active {
+            background-color: var(--orange);
+            color: var(--dark-gray);
+            font-weight: bold;
+        }
+        
+        .category-tab:hover {
+            background-color: var(--yellow);
+        }
+        
+        .part-specs {
+            font-size: 14px;
+            color: #666;
+            margin: 10px 0;
+        }
+        
+        .compatibility {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        
+        .compatible {
+            color: #4CAF50;
+        }
+        
+        .incompatible {
+            color: #f44336;
+        }
+        
+        .stock-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin: 10px 0;
+        }
+        
+        .in-stock {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .low-stock {
+            background-color: #FF9800;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo"><i class="fas fa-microchip"></i></div>
+            <div class="logo-text">CoreTeach</div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">HOME</a>
+            
+            <div class="dropdown">
+                <a href="products.html" class="nav-link">PRODUCTS <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="computers.html">Computers</a>
+                    <a href="custom.html">Custom</a>
+                    <a href="laptop.html">Laptop</a>
+                    <a href="parts.html" style="background-color: var(--orange);">Parts</a>
+                </div>
+            </div>
+            
+            <a href="support.html" class="nav-link">SUPPORT</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
+        </div>
+        
+        <div class="nav-icons">
+            <div class="profile-dropdown">
+                <button class="icon-btn">
+                    <i class="fas fa-user"></i>
+                </button>
+                <div class="profile-dropdown-content">
+                    <a href="signin.html" style="display: flex; padding: 10px; justify-content: center;">Sign In</a>
+                    <p style="justify-content: center;padding: 10px;display: flex;">Don't have an account?</p>
+                    <a href="signup.html" style="justify-content: center;display: flex;">create one</a>
+                </div>
+            </div>
+            
+            <a href="bag.html" class="icon-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count" class="cart-count" style="display: none;">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="parts-header">
+            <h1>COMPONENTS & PARTS</h1>
+            <p>Build or upgrade your system with our selection of quality components</p>
+        </section>
+        
+        <div class="category-tabs">
+            <div class="category-tab active">ALL PARTS</div>
+            <div class="category-tab">PROCESSORS</div>
+            <div class="category-tab">GRAPHICS CARDS</div>
+            <div class="category-tab">MEMORY</div>
+            <div class="category-tab">STORAGE</div>
+            <div class="category-tab">MOTHERBOARDS</div>
+            <div class="category-tab">POWER SUPPLIES</div>
+            <div class="category-tab">COOLING</div>
+        </div>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3 class="product-title">RTX 5070 GPU</h3>
+                <p class="product-price">$799.00</p>
+                <div class="part-specs">
+                    12GB GDDR6 | PCIe 4.0 | 3 DisplayPort
+                </div>
+                <div class="compatibility">
+                    <i class="fas fa-check compatible"></i>
+                    <span>Compatible with: Intel & AMD systems</span>
+                </div>
+                <span class="stock-status in-stock">IN STOCK</span>
+                <button class="btn add-to-cart"
+                        data-id="7"
+                        data-name="RTX 5070 GPU"
+                        data-price="799"
+                        data-category="parts"
+                        style="margin-top: 10px;">
+                    ADD TO BAG
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3 class="product-title">Ryzen AI CPU</h3>
+                <p class="product-price">$499.00</p>
+                <div class="part-specs">
+                    8-Core 16-Thread | 5.2GHz | AM5 Socket
+                </div>
+                <div class="compatibility">
+                    <i class="fas fa-check compatible"></i>
+                    <span>Requires: AM5 Motherboard</span>
+                </div>
+                <span class="stock-status in-stock">IN STOCK</span>
+                <button class="btn add-to-cart"
+                        data-id="8"
+                        data-name="Ryzen AI CPU"
+                        data-price="499"
+                        data-category="parts"
+                        style="margin-top: 10px;">
+                    ADD TO BAG
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-memory"></i>
+                </div>
+                <h3 class="product-title">32GB RAM Kit</h3>
+                <p class="product-price">$129.00</p>
+                <div class="part-specs">
+                    2x16GB DDR5 | 5600MHz | CL36
+                </div>
+                <div class="compatibility">
+                    <i class="fas fa-check compatible"></i>
+                    <span>Compatible with: DDR5 systems</span>
+                </div>
+                <span class="stock-status low-stock">LOW STOCK</span>
+                <button class="btn add-to-cart"
+                        data-id="9"
+                        data-name="32GB RAM Kit"
+                        data-price="129"
+                        data-category="parts"
+                        style="margin-top: 10px;">
+                    ADD TO BAG
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-hdd"></i>
+                </div>
+                <h3 class="product-title">1TB NVMe SSD</h3>
+                <p class="product-price">$89.00</p>
+                <div class="part-specs">
+                    PCIe 4.0 | 7000MB/s Read | M.2 2280
+                </div>
+                <div class="compatibility">
+                    <i class="fas fa-check compatible"></i>
+                    <span>Fits: M.2 slots on most motherboards</span>
+                </div>
+                <span class="stock-status in-stock">IN STOCK</span>
+                <button class="btn add-to-cart"
+                        data-id="12"
+                        data-name="1TB NVMe SSD"
+                        data-price="89"
+                        data-category="parts"
+                        style="margin-top: 10px;">
+                    ADD TO BAG
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <h3 class="product-title">Liquid CPU Cooler</h3>
+                <p class="product-price">$149.00</p>
+                <div class="part-specs">
+                    240mm Radiator | RGB Lighting | Multiple sockets
+                </div>
+                <div class="compatibility">
+                    <i class="fas fa-check compatible"></i>
+                    <span>Compatible with: Intel & AMD</span>
+                </div>
+                <span class="stock-status in-stock">IN STOCK</span>
+                <button class="btn add-to-cart"
+                        data-id="13"
+                        data-name="Liquid CPU Cooler"
+                        data-price="149"
+                        data-category="parts"
+                        style="margin-top: 10px;">
+                    ADD TO BAG
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3 class="product-title">850W Power Supply</h3>
+                <p class="product-price">$139.00</p>
+                <div class="part-specs">
+                    80+ Gold | Fully Modular | 10-year warranty
+                </div>
+                <div class="compatibility">
+                    <i class="fas fa-check compatible"></i>
+                    <span>ATX form factor</span>
+                </div>
+                <span class="stock-status in-stock">IN STOCK</span>
+                <button class="btn add-to-cart"
+                        data-id="14"
+                        data-name="850W Power Supply"
+                        data-price="139"
+                        data-category="parts"
+                        style="margin-top: 10px;">
+                    ADD TO BAG
+                </button>
+            </div>
+        </div>
+        
+        <div style="background-color: var(--light-yellow); padding: 30px; margin-top: 50px; border: var(--pixel-border) solid var(--dark-gray);">
+            <h2>NEED HELP WITH COMPATIBILITY?</h2>
+            <p>Our experts in Battambang can help you choose the right parts for your build.</p>
+            <a href="support.html" class="btn">CONTACT OUR TEAM</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 CoreTeach | Battambang, Cambodia</p>
+    </footer>
+
+    <script src="/CoreTech/MyScript/script.js"></script>
+    <script>
+        // Tab functionality for parts categories
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.category-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                // In a real implementation, this would filter products
+                // For now, just show an alert
+                alert(`Filtering by: ${this.textContent}`);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreTeach - Sign In</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="/CoreTech/styles/Font.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CoreTech/styles/style.css">
+    <style>
+        /* Internal CSS for Sign In page */
+        .signin-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 40px;
+        }
+        
+        .signin-box {
+            background-color: var(--white);
+            border: var(--pixel-border) solid var(--dark-gray);
+            padding: 50px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .signin-box h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+        }
+        
+        .google-btn {
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            margin-bottom: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .divider {
+            margin: 25px 0;
+            position: relative;
+            text-align: center;
+        }
+        
+        .divider::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--dark-gray);
+        }
+        
+        .divider span {
+            background-color: var(--white);
+            padding: 0 15px;
+            position: relative;
+        }
+        
+        .form-footer {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+        
+        .form-footer a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar (Same as other pages) -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo"><i class="fas fa-microchip"></i></div>
+            <div class="logo-text" >CoreTeach</div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">HOME</a>
+            
+            <div class="dropdown">
+                <a href="products.html" class="nav-link">PRODUCTS <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="computers.html">Computers</a>
+                    <a href="custom.html">Custom</a>
+                    <a href="laptop.html">Laptop</a>
+                    <a href="parts.html">Parts</a>
+                </div>
+            </div>
+
+            <a href="support.html" class="nav-link">SUPPORT</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
+        </div>
+        
+        <div class="nav-icons">
+            <a href="bag.html" class="icon-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count" class="cart-count" style="display: none;">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Sign In Form -->
+    <div class="signin-container">
+        <div class="signin-box">
+            <h1>SIGN IN</h1>
+            
+            <button class="google-btn">
+                <i class="fab fa-google"></i>
+                Continue with Google
+            </button>
+            
+            <div class="divider">
+                <span>OR</span>
+            </div>
+            
+            <form id="signin-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                
+                <br>
+
+                <button type="submit" class="btn" style="width: 100%; padding: 15px; font-size: 18px;">
+                    SIGN IN
+                </button>
+                
+                <div class="form-footer">
+                    <p><a href="#">Forgot password?</a></p>
+                    <p>By signing in you agree to our Terms of Service and Privacy Policy</p>
+                    <p>Don't have an account? <a href="#">Create account!</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 CoreTeach | Battambang, Cambodia</p>
+    </footer>
+
+    <script src="/CoreTech/MyScript/script.js"></script>
+</body>
+</html>

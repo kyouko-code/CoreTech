@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreTeach - Laptops</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="/CoreTech/styles/Font.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CoreTech/styles/style.css">
+    <style>
+        .laptops-header {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--yellow) 100%);
+            padding: 60px 40px;
+            text-align: center;
+            border: var(--pixel-border) solid var(--dark-gray);
+            margin-bottom: 40px;
+        }
+        
+        .laptops-header h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+        
+        .laptop-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--cream);
+            border: 2px solid var(--dark-gray);
+        }
+        
+        .feature-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: var(--orange);
+        }
+        
+        .battery-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .battery-icon {
+            color: #4CAF50;
+        }
+        
+        .config-option {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: var(--light-gray);
+            border-left: 4px solid var(--orange);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo"><i class="fas fa-microchip"></i></div>
+            <div class="logo-text">CoreTeach</div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">HOME</a>
+            
+            <div class="dropdown">
+                <a href="products.html" class="nav-link">PRODUCTS <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="computers.html">Computers</a>
+                    <a href="custom.html">Custom</a>
+                    <a href="laptop.html" style="background-color: var(--orange);">Laptop</a>
+                    <a href="parts.html">Parts</a>
+                </div>
+            </div>
+            
+            <a href="support.html" class="nav-link">SUPPORT</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
+        </div>
+        
+        <div class="nav-icons">
+            <div class="profile-dropdown">
+                <button class="icon-btn">
+                    <i class="fas fa-user"></i>
+                </button>
+                <div class="profile-dropdown-content">
+                    <a href="signin.html" style="display: flex; padding: 10px; justify-content: center;">Sign In</a>
+                    <p style="justify-content: center;padding: 10px;display: flex;">Don't have an account?</p>
+                    <a href="signup.html" style="justify-content: center;display: flex;">create one</a>
+                </div>
+            </div>
+            
+            <a href="bag.html" class="icon-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count" class="cart-count" style="display: none;">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="laptops-header">
+            <h1>LAPTOPS</h1>
+            <p>Powerful portability for work, study, and play</p>
+        </section>
+        
+        <div class="laptop-features">
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>High Performance</h3>
+                <p>Latest processors for maximum speed</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h3>Upgradeable</h3>
+                <p>Easy to upgrade RAM and storage</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Durable</h3>
+                <p>Built to last with premium materials</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Local Support</h3>
+                <p>Repair services in Battambang</p>
+            </div>
+        </div>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3 class="product-title">CoreTeach Ultrabook</h3>
+                <p class="product-price">$1,199.00</p>
+                <p>14" Display | Intel i7 | 16GB RAM | 1TB SSD</p>
+                <div class="battery-info">
+                    <i class="fas fa-battery-full battery-icon"></i>
+                    <span>Up to 12 hours battery life</span>
+                </div>
+                <div class="config-option">
+                    <strong>Options:</strong>
+                    <div>RAM: 16GB or 32GB</div>
+                    <div>Storage: 512GB or 1TB</div>
+                </div>
+                <button class="btn add-to-cart"
+                        data-id="4"
+                        data-name="CoreTeach Ultrabook"
+                        data-price="1199"
+                        data-category="laptops"
+                        style="margin-top: 15px;">
+                    ADD TO BAG
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <h3 class="product-title">Gaming Laptop Pro</h3>
+                <p class="product-price">$1,499.00</p>
+                <p>16" 144Hz | RTX 5070 | 32GB RAM | 1TB SSD</p>
+                <div class="battery-info">
+                    <i class="fas fa-battery-three-quarters battery-icon"></i>
+                    <span>Up to 6 hours battery life</span>
+                </div>
+                <div class="config-option">
+                    <strong>Options:</strong>
+                    <div>GPU: RTX 5060 or 5070</div>
+                    <div>Display: 144Hz or 240Hz</div>
+                </div>
+                <button class="btn add-to-cart"
+                        data-id="5"
+                        data-name="Gaming Laptop Pro"
+                        data-price="1499"
+                        data-category="laptops"
+                        style="margin-top: 15px;">
+                    ADD TO BAG
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3 class="product-title">Student Edition</h3>
+                <p class="product-price">$699.00</p>
+                <p>15.6" Display | AMD Ryzen 5 | 8GB RAM | 256GB SSD</p>
+                <div class="battery-info">
+                    <i class="fas fa-battery-full battery-icon"></i>
+                    <span>Up to 10 hours battery life</span>
+                </div>
+                <div class="config-option">
+                    <strong>Student Discount:</strong>
+                    <div>10% off with valid ID</div>
+                </div>
+                <button class="btn add-to-cart"
+                        data-id="6"
+                        data-name="Student Edition Laptop"
+                        data-price="699"
+                        data-category="laptops"
+                        style="margin-top: 15px;">
+                    ADD TO BAG
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="product-title">AI Laptop Pro</h3>
+                <p class="product-price">$1,899.00</p>
+                <p>16" OLED | Ryzen AI | 64GB RAM | 2TB SSD</p>
+                <div class="battery-info">
+                    <i class="fas fa-battery-half battery-icon"></i>
+                    <span>Up to 8 hours battery life</span>
+                </div>
+                <div class="config-option">
+                    <strong>Special Feature:</strong>
+                    <div>Dedicated AI Processor</div>
+                </div>
+                <button class="btn add-to-cart"
+                        data-id="11"
+                        data-name="AI Laptop Pro"
+                        data-price="1899"
+                        data-category="laptops"
+                        style="margin-top: 15px;">
+                    ADD TO BAG
+                </button>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 50px;">
+            <h2>NEED A CUSTOM LAPTOP?</h2>
+            <p>We can configure a laptop specifically for your needs</p>
+            <a href="custom.html" class="btn">BUILD CUSTOM LAPTOP</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 CoreTeach | Battambang, Cambodia</p>
+    </footer>
+
+    <script src="/CoreTech/MyScript/script.js"></script>
+</body>
+</html>

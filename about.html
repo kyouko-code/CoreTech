@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreTeach - About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="/CoreTech/styles/Font.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CoreTech/styles/style.css">
+    <style>
+        .about-header {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--yellow) 100%);
+            padding: 80px 40px;
+            text-align: center;
+            border: var(--pixel-border) solid var(--dark-gray);
+            margin-bottom: 40px;
+        }
+        
+        .about-header h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+        }
+        
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin: 60px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .story-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .story-image {
+            height: 300px;
+            background-color: var(--cream);
+            border: var(--pixel-border) solid var(--dark-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            color: var(--orange);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--white);
+            border: var(--pixel-border) solid var(--dark-gray);
+        }
+        
+        .value-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--orange);
+        }
+        
+        .location-info {
+            background-color: var(--cream);
+            padding: 50px;
+            margin: 60px 0;
+            border: var(--pixel-border) solid var(--dark-gray);
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: var(--light-gray);
+            border: 2px solid var(--dark-gray);
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .member-avatar {
+            width: 150px;
+            height: 150px;
+            background-color: var(--light-yellow);
+            border-radius: 50%;
+            border: 4px solid var(--dark-gray);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .info-icon {
+            font-size: 30px;
+            color: var(--orange);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo"><i class="fas fa-microchip"></i></div>
+            <div class="logo-text">CoreTeach</div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">HOME</a>
+            
+            <div class="dropdown">
+                <a href="products.html" class="nav-link">PRODUCTS <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="computers.html">Computers</a>
+                    <a href="custom.html">Custom</a>
+                    <a href="laptop.html">Laptop</a>
+                    <a href="parts.html">Parts</a>
+                </div>
+            </div>
+
+            <a href="support.html" class="nav-link">SUPPORT</a>
+            <a href="about.html" class="nav-link" style="background-color: var(--dark-gray); color: white;">ABOUT</a>
+        </div>
+        
+        <div class="nav-icons">
+            <div class="profile-dropdown">
+                <button class="icon-btn">
+                    <i class="fas fa-user"></i>
+                </button>
+                <div class="profile-dropdown-content">
+                    <a href="signin.html" style="display: flex; padding: 10px; justify-content: center;">Sign In</a>
+                    <p style="justify-content: center;padding: 10px;display: flex;">Don't have an account?</p>
+                    <a href="signup.html" style="justify-content: center;display: flex;">create one</a>
+                </div>
+            </div>
+            
+            <a href="bag.html" class="icon-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count" class="cart-count" style="display: none;">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="about-header">
+            <h1>ABOUT CORE TEACH</h1>
+            <p style="font-size: 20px; max-width: 800px; margin: 0 auto;">Bringing technology education and quality computers to Battambang, Cambodia since 2020</p>
+        </section>
+        
+        <section class="story-section">
+            <div>
+                <h2 class="section-title">OUR STORY</h2>
+                <p>CoreTeach was founded in Battambang with a simple mission: to make quality computing technology accessible and understandable to everyone in our community.</p>
+                <p>What started as a small computer repair shop has grown into a full-service technology provider, offering custom-built computers, laptops, parts, and educational resources.</p>
+                <p>We believe that understanding technology shouldn't be complicated. That's why we focus on teaching our customers about their devices, not just selling them.</p>
+            </div>
+            <div class="story-image">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="section-title">OUR VALUES</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>EDUCATION FIRST</h3>
+                    <p>We teach you how to use and maintain your technology, empowering you with knowledge.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>QUALITY BUILDS</h3>
+                    <p>Every system we build uses quality components and undergoes rigorous testing.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>LOCAL SUPPORT</h3>
+                    <p>We're based right here in Battambang, offering in-person support and service.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3>SUSTAINABILITY</h3>
+                    <p>We promote upgradable systems and repair over replacement to reduce e-waste.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="location-info">
+            <h2 class="section-title">OUR LOCATION</h2>
+            <p>Visit us in the heart of Battambang for hands-on demonstrations, repairs, and expert advice.</p>
+            
+            <div class="map-placeholder">
+                <div style="text-align: center;">
+                    <i class="fas fa-map-marker-alt" style="font-size: 50px; margin-bottom: 20px; color: var(--orange);"></i>
+                    <p>CoreTeach Store<br>
+                    Battambang, Cambodia<br>
+                    Near the Central Market</p>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4>STORE HOURS</h4>
+                        <p>Mon-Fri: 9AM - 7PM<br>
+                        Sat: 10AM - 6PM<br>
+                        Sun: 11AM - 4PM</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4>CONTACT</h4>
+                        <p>Phone: +855 12 345 678<br>
+                        Email: info@coreteach-kh.com<br>
+                        Facebook: @CoreTeachKH</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h4>SERVICES</h4>
+                        <p>Computer Sales & Repair<br>
+                        Custom Builds<br>
+                        Tech Workshops<br>
+                        IT Consultation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <div style="background-color: var(--yellow); padding: 40px; margin-top: 60px; border: var(--pixel-border) solid var(--dark-gray); text-align: center;">
+            <h2>VISIT OUR STORE</h2>
+            <p>Come see our products in person and get expert advice from our team.</p>
+            <a href="#location" class="btn" style="margin-top: 20px; padding: 15px 30px;">GET DIRECTIONS</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 CoreTeach | Battambang, Cambodia</p>
+        <p style="margin-top: 10px;">
+            Empowering Cambodia through technology education
+        </p>
+    </footer>
+
+    <script src="/CoreTech/MyScript/script.js"></script>
+</body>
+</html>

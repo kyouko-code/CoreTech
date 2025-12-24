@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreTeach - Your Bag</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="/CoreTech/styles/Font.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CoreTech/styles/style.css">
+    <style>
+        /* Internal CSS for Bag page */
+        .bag-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .bag-header h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .empty-bag {
+            text-align: center;
+            padding: 60px;
+            font-size: 24px;
+            color: #666;
+        }
+        
+        .continue-shopping {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .shipping-info {
+            background-color: var(--cream);
+            padding: 20px;
+            margin: 30px 0;
+            border: 2px solid var(--dark-gray);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo"><i class="fas fa-microchip"></i></div>
+            <div class="logo-text">CoreTeach</div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">HOME</a>
+            
+            <div class="dropdown">
+                <a href="products.html" class="nav-link">PRODUCTS <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="computers.html">Computers</a>
+                    <a href="custom.html">Custom</a>
+                    <a href="laptop.html">Laptop</a>
+                    <a href="parts.html">Parts</a>
+                </div>
+            </div>
+
+            <a href="support.html" class="nav-link">SUPPORT</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
+        </div>
+        
+        <div class="nav-icons">
+            <div class="profile-dropdown">
+                <button class="icon-btn">
+                    <i class="fas fa-user"></i>
+                </button>
+                <div class="profile-dropdown-content">
+                    <a href="signin.html" style="display: flex; padding: 10px; justify-content: center;">Sign In</a>
+                    <p style="justify-content: center;padding: 10px;display: flex;">Don't have an account?</p>
+                    <a href="signup.html" style="justify-content: center;display: flex;">create one</a>
+                </div>
+            </div>
+            
+            <a href="bag.html" class="icon-btn" style=" color: white;">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count" class="cart-count" style="display: none;">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="bag-header">
+            <h1>YOUR BAG</h1>
+            <p>Review your items and proceed to checkout</p>
+        </div>
+        
+        <div id="bag-items" class="bag-items">
+            <!-- Items will be loaded by JavaScript -->
+        </div>
+        
+        <div class="continue-shopping">
+            <a href="products.html" class="btn">CONTINUE SHOPPING</a>
+        </div>
+        
+        <div class="shipping-info">
+            <h3>Shipping Information</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Free shipping on all orders</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-undo"></i>
+                    <span>30-day return guarantee</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Limited warranty included</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="summary">
+            <h2>Order Summary</h2>
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span>FREE</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax</span>
+                <span id="tax">$0.00</span>
+            </div>
+            <div class="summary-total">
+                <span>Total</span>
+                <span id="total">$0.00</span>
+            </div>
+            
+            <button onclick="checkout()" class="btn btn-checkout">
+                PROCEED TO CHECKOUT
+            </button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 CoreTeach | Battambang, Cambodia</p>
+    </footer>
+
+    <script src="/CoreTech/MyScript/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreTeach - Computers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="/CoreTech/styles/Font.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CoreTech/styles/style.css">
+    <style>
+        .page-header {
+            background-color: var(--light-yellow);
+            padding: 50px 40px;
+            border: var(--pixel-border) solid var(--dark-gray);
+            margin-bottom: 40px;
+        }
+        
+        .page-header h1 {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .filters {
+            background-color: var(--white);
+            border: var(--pixel-border) solid var(--dark-gray);
+            padding: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .filter-group label {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .filter-group select {
+            padding: 8px 15px;
+            border: 2px solid var(--dark-gray);
+            background-color: var(--light-gray);
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .specs-table td {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+        }
+        
+        .specs-table tr:nth-child(even) {
+            background-color: var(--cream);
+        }
+        
+        .compare-section {
+            margin-top: 60px;
+            padding: 30px;
+            background-color: var(--cream);
+            border: var(--pixel-border) solid var(--dark-gray);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo"><i class="fas fa-microchip"></i></div>
+            <div class="logo-text">CoreTeach</div>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">HOME</a>
+            
+            <div class="dropdown">
+                <a href="products.html" class="nav-link">PRODUCTS <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="computers.html" style="background-color: var(--orange);">Computers</a>
+                    <a href="custom.html">Custom</a>
+                    <a href="laptop.html">Laptop</a>
+                    <a href="parts.html">Parts</a>
+                </div>
+            </div>
+            
+            <a href="support.html" class="nav-link">SUPPORT</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
+        </div>
+        
+        <div class="nav-icons">
+            <div class="profile-dropdown">
+                <button class="icon-btn">
+                    <i class="fas fa-user"></i>
+                </button>
+                <div class="profile-dropdown-content">
+                    <a href="signin.html" style="display: flex; padding: 10px; justify-content: center;">Sign In</a>
+                    <p style="justify-content: center;padding: 10px;display: flex;">Don't have an account?</p>
+                    <a href="signup.html" style="justify-content: center;display: flex;">create one</a>
+                </div>
+            </div>
+            
+            <a href="bag.html" class="icon-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count" class="cart-count" style="display: none;">0</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="page-header">
+            <h1>DESKTOP COMPUTERS</h1>
+            <p>Powerful desktop systems for gaming, work, and creativity</p>
+        </section>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label>PRICE RANGE</label>
+                <select>
+                    <option>All Prices</option>
+                    <option>Under $500</option>
+                    <option>$500 - $1000</option>
+                    <option>$1000 - $1500</option>
+                    <option>Over $1500</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>PROCESSOR</label>
+                <select>
+                    <option>All Processors</option>
+                    <option>Intel</option>
+                    <option>AMD</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label>GRAPHICS</label>
+                <select>
+                    <option>All Graphics</option>
+                    <option>RTX 5070</option>
+                    <option>RTX 5060</option>
+                    <option>Integrated</option>
+                </select>
+            </div>
+            
+            <button class="btn">APPLY FILTERS</button>
+        </div>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <h3 class="product-title">Gaming Pro PC</h3>
+                <p class="product-price">$1,299.00</p>
+                <p>Intel i7 | RTX 5070 | 32GB RAM | 1TB SSD</p>
+                <table class="specs-table">
+                    <tr><td>CPU:</td><td>Intel i7-14700K</td></tr>
+                    <tr><td>GPU:</td><td>RTX 5070 12GB</td></tr>
+                    <tr><td>RAM:</td><td>32GB DDR5</td></tr>
+                    <tr><td>Storage:</td><td>1TB NVMe SSD</td></tr>
+                </table>
+                <button class="btn add-to-cart" 
+                        data-id="1" 
+                        data-name="Gaming Pro PC" 
+                        data-price="1299" 
+                        data-category="computers"
+                        style="margin-top: 15px;">
+                    ADD TO BAG
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 class="product-title">Office Workstation</h3>
+                <p class="product-price">$899.00</p>
+                <p>AMD Ryzen 5 | Integrated | 16GB RAM | 512GB SSD</p>
+                <table class="specs-table">
+                    <tr><td>CPU:</td><td>AMD Ryzen 5 7600</td></tr>
+                    <tr><td>GPU:</td><td>Integrated Graphics</td></tr>
+                    <tr><td>RAM:</td><td>16GB DDR5</td></tr>
+                    <tr><td>Storage:</td><td>512GB SSD</td></tr>
+                </table>
+                <button class="btn add-to-cart" 
+                        data-id="2" 
+                        data-name="Office Workstation" 
+                        data-price="899" 
+                        data-category="computers"
+                        style="margin-top: 15px;">
+                    ADD TO BAG
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3 class="product-title">Streaming Rig</h3>
+                <p class="product-price">$1,599.00</p>
+                <p>AMD Ryzen 9 | RTX 5070 | 64GB RAM | 2TB SSD</p>
+                <table class="specs-table">
+                    <tr><td>CPU:</td><td>AMD Ryzen 9 7950X</td></tr>
+                    <tr><td>GPU:</td><td>RTX 5070 16GB</td></tr>
+                    <tr><td>RAM:</td><td>64GB DDR5</td></tr>
+                    <tr><td>Storage:</td><td>2TB NVMe SSD</td></tr>
+                </table>
+                <button class="btn add-to-cart" 
+                        data-id="3" 
+                        data-name="Streaming Rig" 
+                        data-price="1599" 
+                        data-category="computers"
+                        style="margin-top: 15px;">
+                    ADD TO BAG
+                </button>
+            </div>
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="product-title">AI Workstation</h3>
+                <p class="product-price">$2,299.00</p>
+                <p>Intel i9 | RTX 5090 | 128GB RAM | 4TB SSD</p>
+                <table class="specs-table">
+                    <tr><td>CPU:</td><td>Intel i9-14900K</td></tr>
+                    <tr><td>GPU:</td><td>RTX 5090 24GB</td></tr>
+                    <tr><td>RAM:</td><td>128GB DDR5</td></tr>
+                    <tr><td>Storage:</td><td>4TB NVMe SSD</td></tr>
+                </table>
+                <button class="btn add-to-cart" 
+                        data-id="10" 
+                        data-name="AI Workstation" 
+                        data-price="2299" 
+                        data-category="computers"
+                        style="margin-top: 15px;">
+                    ADD TO BAG
+                </button>
+            </div>
+        </div>
+        
+        <div class="compare-section">
+            <h2 class="section-title">NEED HELP CHOOSING?</h2>
+            <p>All our computers come with:</p>
+            <ul style="margin: 20px 0 20px 30px;">
+                <li>3-year limited warranty</li>
+                <li>Free shipping in Cambodia</li>
+                <li>30-day return guarantee</li>
+                <li>Technical support from our Battambang team</li>
+            </ul>
+            <a href="support.html" class="btn">CONTACT SUPPORT</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 CoreTeach | Battambang, Cambodia</p>
+    </footer>
+
+    <script src="/CoreTech/MyScript/script.js"></script>
+</body>
+</html>
